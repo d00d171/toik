@@ -57,7 +57,6 @@ public class BasicWorkplace implements IWorkplace, IMessageObserver{
 		}
 	}
 	
-	//To zostaje tak jak jest
 	@Override
 	public void sendPopulationToAgent(Population population, String workplaceAddress, Integer agentId) {
 		Message message = new Message();
