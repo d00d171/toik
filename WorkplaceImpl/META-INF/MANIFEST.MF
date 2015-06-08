@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: WorkplaceImpl
+Bundle-SymbolicName: WorkplaceImpl
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Activator: pl.edu.agh.toik.workplace.basic.WorkplaceActvator
+Import-Package: pl.edu.agh.lab.toik.comm,
+ pl.edu.agh.toik.starter,
+ pl.edu.agh.toik.workplace
+Require-Bundle: org.eclipse.osgi
+
+
+
