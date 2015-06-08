@@ -59,8 +59,10 @@ public class BasicWorkplace implements IWorkplace, IMessageObserver{
 	}
 
 	private InetAddress getWorkplaceAddress(){
-		//TODO zwracanie ip
-		return null;
+		InetAddress address = null; 
+		address.getHostAddress();
+		
+		return address;
 	}
 	
 	private String getWorkplaceServiceEndpoint(){
