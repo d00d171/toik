@@ -5,5 +5,6 @@ Bundle-SymbolicName: Workplace
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: pl.edu.agh.toik.workplace
+Import-Package: toik_calculationmodule
 
 

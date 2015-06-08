@@ -1,6 +1,7 @@
 package pl.edu.agh.toik.workplace.basic;
 
 import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -58,11 +59,12 @@ public class BasicWorkplace implements IWorkplace, IMessageObserver{
 	
 	//To zostaje tak jak jest
 	@Override
-	public void sendPopulationToAgent(Object population, String agentAddress) {
+	public void sendPopulationToAgent(Population population, String workplaceAddress, Integer agentId) {
 		Message message = new Message();
 		message.setType(MessageType.POPULATION);
-		message.setValue(population);
-		communicator.sendMessage(message, agentAddress);
+		PopulationMessageValue populationMessageValue = new PopulationMessageValue(agentId, population);
+		message.setValue(populationMessageValue);
+		communicator.sendMessage(message, workplaceAddress);
 	}
 	
 	private void handleConfigurationMessage(Object value){
@@ -105,10 +107,12 @@ public class BasicWorkplace implements IWorkplace, IMessageObserver{
 	};
 	
 	private InetAddress getWorkplaceAddress(){
-		InetAddress address = null; 
-		address.getHostAddress();
-		
-		return address;
+		try {
+			return InetAddress.getLocalHost();
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
 	private String getWorkplaceServiceEndpoint(){
