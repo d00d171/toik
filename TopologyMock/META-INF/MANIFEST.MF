@@ -5,3 +5,5 @@ Bundle-SymbolicName: TopologyMock
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Import-Package: org.osgi.framework
+Export-Package: pl.edu.agh.toik.topology
+

@@ -15,8 +15,8 @@ public class RegistratorImpl implements Registrator{
 	private Map<InetAddress, Integer> registeredWorkspaces = new HashMap<InetAddress, Integer>();
 	
 	@Override
-	public void registrate(InetAddress address, Integer id) {
-		System.out.println("Registering new agent: " + address +  " " + id);
+	public void registrate(InetAddress address) {
+		System.out.println("Registering new agent: " + address);
 	}
 
 	@Override
@@ -25,6 +25,7 @@ public class RegistratorImpl implements Registrator{
 		prop.put(ConfigurationParameters.AGENTS_COUNT, 5);
 		prop.put(ConfigurationParameters.POPULATION_SIZE, 10);
 		prop.put(ConfigurationParameters.STEPS_COUNT, 10);
+		prop.put(ConfigurationParameters.STEP_ACTIONS, /*Tutaj powinny byæ przekazywane jakieœ id tego kolejnych akcji do wykonania w danym kroku algorytmu*/ null);
 		return prop;
 	}
 

@@ -16,14 +16,13 @@ public class BasicWorkplace implements IWorkplace, IMessageObserver{
 	
 	public BasicWorkplace(Registrator registrator, ICommunicator communicator){
 		this.communicator = communicator;
-		registrator.registrate(getWorkplaceAddress(), getWorkplaceId()); //dlaczemu tutaj pierwszy parametr to ma byc inet address
-		communicator.init(getWorkplaceAddress().getCanonicalHostName());  //a tutaj juz string ?
+		registrator.registrate(getWorkplaceAddress());
+		communicator.init(getWorkplaceServiceEndpoint());
 		communicator.addMessageObserver(this);
 	}
 
 	@Override
 	public void handleIncomingMessage(Message message) {
-
 		if(message.getType().equals(MessageType.CONFIG)){
 			handleConfigurationMessage(message.getValue());
 		}
@@ -49,7 +48,6 @@ public class BasicWorkplace implements IWorkplace, IMessageObserver{
 	private void handleConfigurationMessage(Object value){
 		//TODO obs³uga pocz¹tkowej konfiguracji
 		//konfiguracja i przygotowanie agentów
-		//konfiguracja i przygotowanie topologii ????
 	}
 	
 	private void handleInitMessage(){
@@ -65,9 +63,9 @@ public class BasicWorkplace implements IWorkplace, IMessageObserver{
 		return null;
 	}
 	
-	private Integer getWorkplaceId(){
-		//TODO co to za id oni chc¹?
-		return 1;
+	private String getWorkplaceServiceEndpoint(){
+		//TODO prawdziwa wartosc
+		return "http://localhost:8080/workplace";
 	}
 	
 }

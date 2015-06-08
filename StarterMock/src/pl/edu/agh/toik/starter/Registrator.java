@@ -5,9 +5,9 @@ import java.util.Properties;
 
 public interface Registrator {
 
-	public void registrate(InetAddress address, Integer id);
+	public void registrate(InetAddress address);
 
-	//TODO tego ma docelowo nie byc
+	//TODO tego ma docelowo nie byc, przyda sie w mocku zeby zastartowac od razu
 	public Properties getProperties();
 	
 }
