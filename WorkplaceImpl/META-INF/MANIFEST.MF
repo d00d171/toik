@@ -6,8 +6,11 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-Activator: pl.edu.agh.toik.workplace.basic.WorkplaceActvator
 Import-Package: pl.edu.agh.lab.toik.comm,
+ pl.edu.agh.toik.common,
  pl.edu.agh.toik.starter,
- pl.edu.agh.toik.workplace
+ pl.edu.agh.toik.topology,
+ pl.edu.agh.toik.workplace,
+ toik_calculationmodule
 Require-Bundle: org.eclipse.osgi
 
 
