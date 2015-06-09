@@ -13,13 +13,13 @@ import pl.edu.agh.lab.toik.comm.IMessageObserver;
 import pl.edu.agh.lab.toik.comm.Message;
 import pl.edu.agh.lab.toik.comm.MessageType;
 import pl.edu.agh.toik.common.ConfigurationParameters;
+import pl.edu.agh.toik.common.Population;
+import pl.edu.agh.toik.common.PopulationMessageValue;
 import pl.edu.agh.toik.starter.Registrator;
 import pl.edu.agh.toik.topology.TopologyCreator;
 import pl.edu.agh.toik.workplace.IWorkplace;
 import toik_calculationmodule.CalculationAgent;
 import toik_calculationmodule.CalculationAgentImpl;
-import toik_calculationmodule.Population;
-import toik_calculationmodule.PopulationMessageValue;
 
 public class BasicWorkplace implements IWorkplace, IMessageObserver{
 	
@@ -59,11 +59,15 @@ public class BasicWorkplace implements IWorkplace, IMessageObserver{
 	
 	@Override
 	public void sendPopulationToAgent(Population population, String workplaceAddress, Integer agentId) {
-		Message message = new Message();
-		message.setType(MessageType.POPULATION);
-		PopulationMessageValue populationMessageValue = new PopulationMessageValue(agentId, population);
-		message.setValue(populationMessageValue);
-		communicator.sendMessage(message, workplaceAddress);
+		if(workplaceAddress.equals(getWorkplaceAddress())){
+			populationMessages.put(agentId, population);
+		} else {
+			Message message = new Message();
+			message.setType(MessageType.POPULATION);
+			PopulationMessageValue populationMessageValue = new PopulationMessageValue(agentId, population);
+			message.setValue(populationMessageValue);
+			communicator.sendMessage(message, workplaceAddress);
+		}
 	}
 	
 	private void handleConfigurationMessage(Object value){
@@ -76,7 +80,7 @@ public class BasicWorkplace implements IWorkplace, IMessageObserver{
 		int agentsCount = (int) configuration.get(ConfigurationParameters.AGENTS_COUNT);
 		for(int i= 0; i<agentsCount; i++){
 			CalculationAgent agent = new CalculationAgentImpl();
-			agent.initializeAgent(this, configuration, topologyCreator);
+			agent.initializeAgent(this, configuration, topologyCreator, i);
 			agents.put(i, agent);
 		}
 	}

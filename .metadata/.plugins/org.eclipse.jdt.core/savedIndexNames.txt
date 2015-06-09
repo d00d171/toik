@@ -1,0 +1,9 @@
+INDEX VERSION 1.126+C:\Users\Admin\Documents\toik\.metadata\.plugins\org.eclipse.jdt.core
+3984993628.index
+855481627.index
+4104194643.index
+3096713841.index
+2957686917.index
+676699823.index
+898587242.index
+2222856472.index

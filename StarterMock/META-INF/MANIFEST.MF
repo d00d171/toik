@@ -4,7 +4,9 @@ Bundle-Name: StarterMock
 Bundle-SymbolicName: StarterMock
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Import-Package: org.osgi.framework, pl.edu.agh.lab.toik.comm
-Export-Package: pl.edu.agh.toik.common, pl.edu.agh.toik.starter
+Import-Package: org.osgi.framework,
+ pl.edu.agh.lab.toik.comm,
+ pl.edu.agh.toik.common
+Export-Package: pl.edu.agh.toik.starter
 
 

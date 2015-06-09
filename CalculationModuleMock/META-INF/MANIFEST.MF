@@ -4,7 +4,8 @@ Bundle-Name: CalculationModuleMock
 Bundle-SymbolicName: CalculationModuleMock
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Import-Package: pl.edu.agh.toik.topology,
+Import-Package: pl.edu.agh.toik.common,
+ pl.edu.agh.toik.topology,
  pl.edu.agh.toik.workplace
 Export-Package: toik_calculationmodule
  

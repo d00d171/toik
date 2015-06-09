@@ -1,6 +1,6 @@
 package pl.edu.agh.toik.workplace;
 
-import toik_calculationmodule.Population;
+import pl.edu.agh.toik.common.Population;
 
 public interface IWorkplace {
 

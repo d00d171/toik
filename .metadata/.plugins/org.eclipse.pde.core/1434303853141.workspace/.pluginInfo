@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<bundle bundleID="451" localization="OSGI-INF/l10n/bundle" name="StarterMock" project="StarterMock"/>
+	<bundle bundleID="452" class="pl.edu.agh.toik.workplace.basic.WorkplaceActvator" localization="OSGI-INF/l10n/bundle" name="WorkplaceImpl" project="WorkplaceImpl"/>
+	<bundle bundleID="453" class="pl.agh.lab.toik.communicationmock.Activator" localization="OSGI-INF/l10n/bundle" name="CommunicationMock" project="CommunicationMock"/>
+	<bundle bundleID="454" localization="OSGI-INF/l10n/bundle" name="TopologyMock" project="TopologyMock"/>
+	<bundle bundleID="455" localization="OSGI-INF/l10n/bundle" name="Workplace" project="Workplace"/>
+	<bundle bundleID="456" localization="OSGI-INF/l10n/bundle" name="CalculationModuleMock" project="CalculationModuleMock"/>
+	<bundle bundleID="458" localization="OSGI-INF/l10n/bundle" name="Commons" project="Commons"/>
+</map>

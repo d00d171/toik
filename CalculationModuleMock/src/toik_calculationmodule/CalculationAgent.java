@@ -1,12 +1,14 @@
 package toik_calculationmodule;
 
 import java.util.Properties;
+ 
 
+import pl.edu.agh.toik.common.Population;
 import pl.edu.agh.toik.topology.TopologyCreator;
 import pl.edu.agh.toik.workplace.IWorkplace;
 
 public interface CalculationAgent {
-	boolean initializeAgent(IWorkplace workplace, Properties configuration, TopologyCreator topology);
+	boolean initializeAgent(IWorkplace workplace, Properties configuration, TopologyCreator topology, Integer id);
 	void step();
 	void injectPopulation(Population population);
 }
